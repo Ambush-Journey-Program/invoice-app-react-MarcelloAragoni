@@ -1,0 +1,19 @@
+@import '../../root.scss';
+
+.button {
+  width: 5.375rem;
+  height: 3rem;
+  background-color: $button-color;
+  color: $white;
+  border: none;
+  border-radius: 2rem;
+
+  &--delete {
+    width: 2rem;
+    height: 2rem;
+    background-image: url('../../../public/images/delete.svg');
+    background-repeat: space;
+    margin-right: 1rem;
+    background-position: center;
+  }
+}
