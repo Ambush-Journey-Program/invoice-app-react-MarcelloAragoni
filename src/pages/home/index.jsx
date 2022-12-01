@@ -1,12 +1,13 @@
-import Button from '../../components/button';
+import { useState } from 'react';
+import { handleSubmit } from '../../services/submit';
+import SearchInput from '../../components/search-input';
 
 export default function Home() {
+  const [searchValue, setSearchValue] = useState('');
+
   return (
-    <div>
-      <Button type="submit" variant="search">
-        Search
-      </Button>
-      <Button type="submit" variant="delete" />
-    </div>
+    <form onSubmit={handleSubmit}>
+      <SearchInput setValue={setSearchValue} value={searchValue} />
+    </form>
   );
 }
