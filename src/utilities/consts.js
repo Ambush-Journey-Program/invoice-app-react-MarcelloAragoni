@@ -7,7 +7,3 @@ export const sortParams = {
   _sort: DEFAULT_SORT,
   _order: DEFAULT_SORT_ORDER
 };
-
-export let urlParams = new URLSearchParams({
-  ...sortParams
-});

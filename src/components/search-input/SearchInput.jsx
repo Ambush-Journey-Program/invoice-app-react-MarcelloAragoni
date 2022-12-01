@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import './style.scss';
 
-export default function SearchInput({ setValue, value }) {
+export default function SearchInput({ onChange, value }) {
   function handleChange(event) {
-    setValue(event.target.value);
+    onChange(event.target.value);
   }
 
   return (
