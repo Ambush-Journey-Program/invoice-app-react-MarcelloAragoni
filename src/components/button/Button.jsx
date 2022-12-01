@@ -1,16 +1,16 @@
-import cn from 'classnames';
 import PropTypes from 'prop-types';
 import './style.scss';
 
 export default function Button({ type = 'button', children, variant }) {
-  const buttonVariant = cn(
-    'button',
-    { 'button--search': variant === 'search' },
-    { 'button--delete': variant === 'delete' }
-  );
+  const variants = {
+    search: 'button--search',
+    delete: 'button--delete'
+  };
+
+  const buttonVariant = variants[variant];
 
   return (
-    <button className={buttonVariant} type={type}>
+    <button className={`button ${buttonVariant}`} type={type}>
       {children}
     </button>
   );
