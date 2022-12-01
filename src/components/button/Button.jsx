@@ -1,12 +1,8 @@
 import PropTypes from 'prop-types';
+import { variants } from './constants';
 import './style.scss';
 
 export default function Button({ type = 'button', children, variant }) {
-  const variants = {
-    search: 'button--search',
-    delete: 'button--delete'
-  };
-
   const buttonVariant = variants[variant];
 
   return (
