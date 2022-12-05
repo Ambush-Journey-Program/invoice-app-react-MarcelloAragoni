@@ -7,14 +7,14 @@ export default function SearchStatus({ onChange, statusValue }) {
 
   return (
     <>
-      <label htmlFor="status__filter" className="search__status--label">
+      <label htmlFor="status__filter" className="searchbar__status--label">
         Filter by status
       </label>
       <select
         value={statusValue}
         name="status__filter"
         id="status"
-        className="search__status--box"
+        className="searchbar__status--box"
         onChange={handleChange}>
         <option value="">--</option>
         <option value="paid">Paid</option>
