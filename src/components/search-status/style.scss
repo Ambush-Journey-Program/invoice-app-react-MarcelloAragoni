@@ -1,0 +1,17 @@
+@import '../../root.scss';
+
+.search {
+
+  &__status {
+
+    &--box {
+      width: 1rem;
+      border: none;
+      background-color: var(--light-white);
+      color: $button-color;
+      margin-right: 2rem;
+    }
+
+  }
+
+}
