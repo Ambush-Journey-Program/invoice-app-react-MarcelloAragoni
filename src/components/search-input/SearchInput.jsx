@@ -9,7 +9,7 @@ export default function SearchInput({ onChange, value }) {
   return (
     <input
       onChange={handleChange}
-      className="search--input"
+      className="searchbar__input"
       type="text"
       placeholder="Invoice Owner"
       value={value}
