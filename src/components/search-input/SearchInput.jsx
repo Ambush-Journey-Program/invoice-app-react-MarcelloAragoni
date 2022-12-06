@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 import './style.scss';
 
 export default function SearchInput({ onChange, value }) {
@@ -18,5 +19,6 @@ export default function SearchInput({ onChange, value }) {
 }
 
 SearchInput.propTypes = {
-  value: PropTypes.string
+  value: PropTypes.string,
+  onChange: PropTypes.func
 };

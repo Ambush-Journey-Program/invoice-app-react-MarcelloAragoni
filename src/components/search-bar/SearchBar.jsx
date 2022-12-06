@@ -1,37 +1,32 @@
-import './style.scss';
+import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { sortParams } from '../../utilities/consts';
+
 import { getInvoices } from '../../services/invoice';
+import { formatQueryParams } from '../../utilities/helper';
 import SearchInput from '../../components/search-input';
 import SearchStatus from '../../components/search-status';
 import Button from '../../components/button';
+import './style.scss';
 
-export default function SearchBar() {
+export default function SearchBar({ onSubmit }) {
   const [searchValue, setSearchValue] = useState('');
   const [searchStatus, setSearchStatus] = useState('');
-
-  const urlParams = new URLSearchParams({
-    ...sortParams
-  });
 
   async function handleSubmit(event) {
     event.preventDefault();
 
     const filterParams = [
       { name: 'clientName', value: searchValue },
-
       { name: 'status', value: searchStatus }
     ];
 
-    filterParams.forEach((filter) => {
-      if (filter.value) {
-        urlParams.set(filter.name, filter.value);
-      } else {
-        urlParams.delete(filter.name);
-      }
-    });
+    const urlParams = formatQueryParams(filterParams);
 
-    await getInvoices(urlParams);
+    const invoices = await getInvoices(urlParams);
+
+    console.log({ invoices });
+
+    onSubmit(invoices);
   }
 
   return (
@@ -50,3 +45,7 @@ export default function SearchBar() {
     </nav>
   );
 }
+
+SearchBar.propType = {
+  onChange: PropTypes.func
+};
