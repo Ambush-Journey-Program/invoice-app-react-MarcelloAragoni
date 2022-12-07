@@ -1,9 +1,10 @@
 import { useState } from 'react';
 
-import SearchBar from '../../components/search-bar/SearchBar';
+import SearchBar from '../../components/search-bar/';
+import InvoiceList from '../../components/invoice-list/';
 
 export default function Home() {
-  const [, setInvoices] = useState([]);
+  const [invoices, setInvoices] = useState([]);
 
   const handleGetInvoiceList = (invoiceResponse) => {
     setInvoices(invoiceResponse);
@@ -12,7 +13,7 @@ export default function Home() {
   return (
     <>
       <SearchBar onSubmit={handleGetInvoiceList} />
-      {/* <InvoiceList invoices={invoices} /> */}
+      <InvoiceList invoices={invoices} />
     </>
   );
 }

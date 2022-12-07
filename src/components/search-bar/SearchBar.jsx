@@ -24,8 +24,6 @@ export default function SearchBar({ onSubmit }) {
 
     const invoices = await getInvoices(urlParams);
 
-    console.log({ invoices });
-
     onSubmit(invoices);
   }
 
