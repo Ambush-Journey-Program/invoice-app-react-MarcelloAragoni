@@ -13,7 +13,7 @@ export default function Home() {
     setInvoices(invoices);
   };
 
-  const handleUpdateInvoice = async (idCurrentInvoice, statusCurrentInvoice) => {
+  const handleStatusInvoiceUpdate = async (idCurrentInvoice, statusCurrentInvoice) => {
     const newStatus = statusCurrentInvoice === 'pending' ? 'paid' : 'pending';
 
     updateInvoice(idCurrentInvoice, { status: newStatus });
@@ -31,7 +31,7 @@ export default function Home() {
       <SearchBar onSubmit={handleGetInvoiceList} />
       <InvoiceList
         invoices={invoices}
-        updateInvoice={handleUpdateInvoice}
+        updateInvoice={handleStatusInvoiceUpdate}
         deleteInvoice={handleDeleteInvoice}
       />
     </>
