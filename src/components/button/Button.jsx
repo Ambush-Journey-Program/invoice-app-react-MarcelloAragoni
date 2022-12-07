@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { variants } from './constants';
 import './style.scss';
 
-export default function Button({ type = 'button', children, variant, valueButton = '' }) {
+export default function Button({ type = 'button', children, variant, ...buttonProps }) {
   const buttonVariant = variants[variant];
 
   return (
-    <button value={valueButton} className={`button ${buttonVariant}`} type={type}>
+    <button className={`button ${buttonVariant}`} type={type} {...buttonProps}>
       {children}
     </button>
   );

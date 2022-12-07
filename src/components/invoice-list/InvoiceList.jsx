@@ -4,11 +4,12 @@ import InvoiceItem from '../invoice-item';
 import NothingFound from '../nothing-found/NothingFound';
 import './style.scss';
 
-export default function InvoiceList({ invoices }) {
+export default function InvoiceList({ invoices, updateInvoice, deleteInvoice }) {
   console.log({ invoices });
+
   return (
     <>
-      {invoices.length ? (
+      {invoices?.length ? (
         <ul className="invoices">
           {invoices.map((invoice) => (
             <InvoiceItem
@@ -18,6 +19,8 @@ export default function InvoiceList({ invoices }) {
               clientName={invoice.clientName}
               total={invoice.total}
               status={invoice.status}
+              onUpdateStatus={updateInvoice}
+              onDeleteInvoice={deleteInvoice}
             />
           ))}
         </ul>
@@ -29,5 +32,7 @@ export default function InvoiceList({ invoices }) {
 }
 
 InvoiceList.propTypes = {
-  invoices: PropTypes.array
+  invoices: PropTypes.array,
+  updateInvoice: PropTypes.func,
+  deleteInvoice: PropTypes.func
 };
