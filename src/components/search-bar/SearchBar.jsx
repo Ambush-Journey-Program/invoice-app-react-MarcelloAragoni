@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
-import { getInvoices } from '../../services/invoice';
 import { formatQueryParams } from '../../utilities/helper';
 import SearchInput from '../../components/search-input';
 import SearchStatus from '../../components/search-status';
@@ -22,11 +21,7 @@ export default function SearchBar({ onSubmit }) {
 
     const urlParams = formatQueryParams(filterParams);
 
-    const invoices = await getInvoices(urlParams);
-
-    console.log({ invoices });
-
-    onSubmit(invoices);
+    onSubmit(urlParams);
   }
 
   return (

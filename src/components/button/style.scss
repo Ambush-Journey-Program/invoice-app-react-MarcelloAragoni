@@ -16,4 +16,23 @@
     margin-right: 1rem;
     background-position: center;
   }
+
+  &--status {
+    text-transform: capitalize;
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+
+    &--paid {
+      color: $dark-green;
+    }
+
+    &--pending {
+      color: $orange;
+    }
+
+    &--draft {
+      color: $dark-gray;
+    }
+  }
 }
