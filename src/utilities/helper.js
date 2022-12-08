@@ -15,3 +15,11 @@ export function formatQueryParams(params) {
 
   return urlParams;
 }
+
+export function handleShowConfirmationWindow(id, value) {
+  document.getElementById(id).classList.remove(value);
+}
+
+export function handleHideConfirmationWindow(id, value) {
+  document.getElementById(id).classList.add(value);
+}
