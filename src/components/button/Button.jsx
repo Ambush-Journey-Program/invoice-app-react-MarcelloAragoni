@@ -4,7 +4,7 @@ import { variants } from './constants';
 import './style.scss';
 
 export default function Button({ type = 'button', children, variant, ...buttonProps }) {
-  const buttonVariant = variants[variant];
+  const buttonVariant = variants[variant] || '';
 
   return (
     <button className={`button ${buttonVariant}`} type={type} {...buttonProps}>
